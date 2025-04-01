@@ -1,0 +1,146 @@
+body{
+    font-family: "Latoregular",sans-serif;
+}
+
+.navbar{
+    background-color: #2384FE;
+    border-bottom: 1px solid #fff;
+}
+
+.navbar-brand{
+    max-width: 41px;
+    max-height: 3rem;
+    
+}
+
+.Header__logotxt {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1;
+    min-width: 4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.navbar-brand img{
+    width: 100%;
+    margin-right: 0.9375rem !important;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #fff !important;
+}
+
+.home-header{
+    background-color: #2384FE;
+    padding: 60px 25px;
+}
+
+.home-header h1{
+    color: #fff;
+    padding: 20px 0;
+}
+
+.home-header h3{
+    color: #fff;
+    margin-bottom: 31px;
+}
+
+.search {
+    position: relative;
+}
+
+.search-1 {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    padding: 4px;
+    border-radius: 5px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.search-1 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 10px;
+    border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-1 i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 24px;
+    color: #eee
+}
+
+::placeholder {
+    color: #eee;
+    opacity: 1
+}
+
+.search button {
+    position: absolute;
+    right: 102px;
+    top: 0px;
+    border: none;
+    height: 53px;
+    background-color: red;
+    color: #fff;
+    width: 90px;
+    border-radius: 4px;
+}
+
+.popular-keywords ul{
+    list-style: none;
+    color: #fff;
+    padding-left: 0;
+}
+
+.popular-keywords li{
+    display: inline-block;
+    color: #fff;
+}
+
+.popular-keywords li a{
+    color: #fff;
+    font-size: 19px;
+    font-weight: 600;
+    margin-right: 9px;
+}
+
+.popular-keywords{
+    padding: 27px 0;
+}
+
+.media-body img{
+    width: 100%;
+    border-radius: 6px;
+}
+
+.help-line{
+    background-color: #f3f5f7;
+    color: #3e7af7;
+}
+
+.help-line .p-6{
+    padding: 60px;
+}
+.footer{
+    background-color: #3e7af7;
+    color: #fff;
+}
+.footer a{
+    color: #fff;
+}
