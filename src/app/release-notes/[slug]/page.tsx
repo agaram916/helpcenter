@@ -12,12 +12,11 @@ interface ReleaseNote {
 
 const builder = imageUrlBuilder(client);
 
-export function getSanityImageUrl(source: any) {
+export const getSanityImageUrl = (source: any) => {
   return builder.image(source).url();
 }
 // Fetch release note data based on slug
-async function getReleaseNote(slug: string): Promise<ReleaseNote | null> {
-  
+const getReleaseNote = async (slug: string): Promise<ReleaseNote | null> => {  
   const query = `*[_type == "release-notes" && slug.current == $slug][0]{
     version, date, body
   }`;
