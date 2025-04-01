@@ -12,9 +12,9 @@ interface ReleaseNote {
 
 const builder = imageUrlBuilder(client);
 
-export const getSanityImageUrl = (source: any) => {
-  return builder.image(source).url();
-}
+// export const getSanityImageUrl = (source: any) => {
+//   return builder.image(source).url();
+// }
 // Fetch release note data based on slug
 const getReleaseNote = async (slug: string): Promise<ReleaseNote | null> => {  
   const query = `*[_type == "release-notes" && slug.current == $slug][0]{
@@ -48,7 +48,9 @@ export default async function ReleaseNotePage({ params }: { params: { slug: stri
             types: {
               image: ({ value }) => {
                 if (!value?.asset?._ref) return null;
-                const imageUrl = getSanityImageUrl(value.asset);
+                //const imageUrl = getSanityImageUrl(value.asset);
+                const imageUrl = "";
+
                 const className = value.className || "";
                 return (
                   <figure className={`inner-image ${className}`}>
