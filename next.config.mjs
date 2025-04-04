@@ -1,14 +1,13 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-// output: 'export',
-    basePath: '/helpcenter',
-    trailingSlash: true,
+    trailingSlash: false,
+    output: 'standalone',  // Enable standalone mode for deployment
     images: {
-        unoptimized: true, //Disables image optimization for static export
+        unoptimized: true,
     },
     eslint: {
-        ignoreDuringBuilds: true, //Ignores ESLint errors during the build process
+        ignoreDuringBuilds: true,
     },
 };
+
 export default nextConfig;
 
