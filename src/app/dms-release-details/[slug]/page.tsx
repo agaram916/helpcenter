@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import client from "../../../../lib/sanityClient";
 import imageUrlBuilder from '@sanity/image-url';
+import Help from "@/components/help";
 
 // Define TypeScript interface for release notes
 interface ReleaseNote {
@@ -17,7 +18,7 @@ const builder = imageUrlBuilder(client);
 // }
 // Fetch release note data based on slug
 const getReleaseNote = async (slug: string): Promise<ReleaseNote | null> => {  
-  const query = `*[_type == "release-notes" && slug.current == $slug][0]{
+  const query = `*[_type == "sdms-release-notes" && slug.current == $slug][0]{
     version, date, body
   }`;
 
@@ -98,8 +99,7 @@ export default async function ReleaseNotePage({ params }: { params: { slug: stri
         />
       </section>
    </div>
-
-      {/* <a href="/release-notes">← Back to all release notes</a> */}  
+          <Help/>
     </div>
   );
 }

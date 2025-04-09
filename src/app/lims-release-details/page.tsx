@@ -22,7 +22,7 @@ export default function Releasedetails() {
   useEffect(() => {
     const fetchReleaseNotes = async () => {
       try {
-        const query = `*[_type == "release-notes"] | order(date desc) { _id, version, date, details, slug }`;
+        const query = `*[_type == "lims-release-notes"] | order(date desc) { _id, version, date, details, slug }`;
         const result: ReleaseNote[] = await client.fetch(query);
         setReleaseNotes(result);
       } catch (error) {
@@ -68,7 +68,7 @@ export default function Releasedetails() {
               <Link href="/release-product">Product Release Notes</Link>
             </li>
             <li>
-              <Link href="/eln-release-details">ELN Release Notes</Link>
+              <Link href="/lims-release-details">LIMS Release Notes</Link>
             </li>
           </ul>
         </nav>
@@ -83,7 +83,7 @@ export default function Releasedetails() {
               <ul className="release-lists">
                 {releaseNotes.map((note) => (
                   <li key={note._id}>
-                    <Link href={`/eln-release-details/${note.slug.current}`}>
+                    <Link href={`/lims-release-details/${note.slug.current}`}>
                       <span className="release-title">
                         Release Notes: Version {note.version}
                       </span>

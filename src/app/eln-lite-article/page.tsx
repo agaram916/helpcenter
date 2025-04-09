@@ -15,12 +15,12 @@ interface Article {
   columnPosition?: 'left' | 'right'; // ✅ Add this new property
 }
 
-const ElntroubleArticle = () => {
+const ElnlitetroubleArticle = () => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const query = `*[_type == "article"] | order(_createdAt asc) {
+      const query = `*[_type == "elnlitearticle"] | order(_createdAt asc) {
         title,
         section,
         subtitle,
@@ -84,7 +84,7 @@ Object.keys(groupedArticles).forEach((section) => {
 
       <div className='troble-article-list'>
         <div className='container'>
-             <h1 className='text-center'>Logilab ELN Tutorial Article</h1>
+             <h1 className='text-center'>Qualis DMS Tutorial Article</h1>
              <div className="row">
   {/* Left Column */}
   <div className="col-md-6">
@@ -98,7 +98,7 @@ Object.keys(groupedArticles).forEach((section) => {
               <ul className="artile-list text-left">
                 {groupedArticles[section].articles[subtitle].map((article, i) => (
                   <li key={i}>
-                    <Link href={`/elntroublearticlesanity/${article.slug}`}>{article.title}</Link>
+                    <Link href={`/eln-lite-article/${article.slug}`}>{article.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -121,7 +121,7 @@ Object.keys(groupedArticles).forEach((section) => {
                       <ul className="artile-list text-left">
                         {groupedArticles[section].articles[subtitle].map((article, i) => (
                           <li key={i}>
-                            <Link href={`/elntroublearticlesanity/${article.slug}`}>{article.title}</Link>
+                            <Link href={`/eln-lite-article/${article.slug}`}>{article.title}</Link>
                           </li>
                         ))}
                       </ul>
@@ -138,4 +138,4 @@ Object.keys(groupedArticles).forEach((section) => {
   );
 };
 
-export default ElntroubleArticle;
+export default ElnlitetroubleArticle;

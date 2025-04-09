@@ -51,14 +51,14 @@ const FAQ = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../faq-eln'><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/eln-faq'><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN. Logilab ELN Web user manual is intended for administrators or anyone using Logilab ELN
                                     Web application.</p>
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../faqsdms'><Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/sdms-faq'><Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
 
                                 <p>This guide provides instructions about configuring and using Logilab SDMS. Logilab SDMS Web user manual is intended for administrators or anyone using Logilab SDMS
@@ -74,7 +74,7 @@ const FAQ = () => {
 
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../faqcfr'><Image alt='logo' src={CFR} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/cfr-faq'><Image alt='logo' src={CFR} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using CFR Gateway.CFR Gateway Web user manual is intended for administrators or anyone using CFR Gateway
                                     Web application.</p>

@@ -6,7 +6,7 @@ import Footer from '@/components/footer';
 import Help from '@/components/help';
 import { SyncLoader } from 'react-spinners';
 import { PortableText } from '@portabletext/react';
-import client from '../../../lib/sanityClient';
+import client from '../../../../lib/sanityClient';
 import imageUrlBuilder from '@sanity/image-url';
 
 // Initialize Sanity image URL builder
@@ -106,12 +106,10 @@ const Usersetup = () => {
          <ul className="list-unstyled row mb-0">
             <li><Link href="/">Home</Link></li>
             <li><Link href="../../product-document">Article Products</Link></li>
-            <li><Link href="../elntroublearticle">ELN Article</Link></li>
+            <li><Link href="/eln-articel">ELN Article</Link></li>
           </ul>
         </nav>
       </div>
-
-
       <div className="trouble-article-list">
         {showButton && (
           <button id="btn-back-to-top" onClick={backToTop} style={{ display: 'block' }}>
@@ -123,7 +121,7 @@ const Usersetup = () => {
         <div className="inner-details">
           {article.mainImage?.asset?._ref && (
             <div className="inner-image">
-              <img src={getSanityImageUrl(article.mainImage.asset)} alt={article.title} className="p-0 my-3" />
+              <img src={getSanityImageUrl(article.mainImage.asset)} alt={article.title} className="p-0 my-3"/>
             </div>
           )}
 
@@ -194,7 +192,7 @@ const Usersetup = () => {
         </span>
       ),
       largeText: ({ children }) => (
-        <span style={{ fontSize: '20px', fontWeight: 'bold' }}>
+        <span style={{ fontSize: '20px', fontWeight: 'bold'}}>
           {children}
         </span>
       ),
@@ -209,7 +207,7 @@ const Usersetup = () => {
                 {article.prevArticle ? (
                   <>
                     <h4>Previous article</h4>
-                    <Link href={`/article/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
+                    <Link href={`/eln-articel/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
                   </>
                 ) : null}
               </div>
@@ -217,7 +215,7 @@ const Usersetup = () => {
                 {article.nextArticle ? (
                   <>
                     <h4>Next article</h4>
-                    <Link href={`/article/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
+                    <Link href={`/eln-articel/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
                   </>
                 ) : null}
               </div>

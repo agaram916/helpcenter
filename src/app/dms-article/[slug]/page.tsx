@@ -22,7 +22,7 @@ interface Article {
   nextArticle?: { title: string; slug: { current: string } };
 }
 
-const Usersetup = () => {
+const DmsUsersetup = () => {
   const params = useParams();
   const slug = params?.slug as string;
   const [showButton, setShowButton] = useState(false);
@@ -36,7 +36,7 @@ const Usersetup = () => {
     if (!slug) return;
     const fetchData = async () => {
       try {
-        const query = `*[_type == "article" && slug.current == $slug][0] {
+        const query = `*[_type == "dmsarticle" && slug.current == $slug][0] {
           title,
           body,
           mainImage,
@@ -106,7 +106,7 @@ const Usersetup = () => {
          <ul className="list-unstyled row mb-0">
             <li><Link href="/">Home</Link></li>
             <li><Link href="../../product-document">Article Products</Link></li>
-            <li><Link href="/elntroublearticlesanity">ELN Article</Link></li>
+            <li><Link href="/dms-article">DMS Article</Link></li>
           </ul>
         </nav>
       </div>
@@ -207,7 +207,7 @@ const Usersetup = () => {
                 {article.prevArticle ? (
                   <>
                     <h4>Previous article</h4>
-                    <Link href={`/elntroublearticlesanity/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
+                    <Link href={`/dms-article/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
                   </>
                 ) : null}
               </div>
@@ -215,7 +215,7 @@ const Usersetup = () => {
                 {article.nextArticle ? (
                   <>
                     <h4>Next article</h4>
-                    <Link href={`/elntroublearticlesanity/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
+                    <Link href={`/dms-article/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
                   </>
                 ) : null}
               </div>
@@ -228,5 +228,5 @@ const Usersetup = () => {
   );
 };
 
-export default Usersetup;
+export default DmsUsersetup;
 

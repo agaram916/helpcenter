@@ -46,7 +46,7 @@ const ProductDocument = () => {
                     <ul>
                         <li>
                             {/* <div className='pro-img'><Link href="../Limstroublearticle"><img src='../image/LIMS-logo.png' /></Link></div> */}
-                            <div className='pro-img'><Link href="../limsartical/limstroublearticle"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/lims-article"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 {/* <h1><a href='#'>Qualis LIMS</a></h1> */}
                                 <p>This guide provides instructions about configuring and using Qualis LIMS. Qualis LIMS Web user manual is intended for administrators or anyone using Qualis LIMS
@@ -58,7 +58,7 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href="../elnartical/elntroublearticle"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/eln-articel"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 {/* <span><img src='image/ELN.jpg' /></span>
                                 <h1><a href='#'>LogiLab ELN</a></h1> */}
@@ -71,7 +71,7 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../sdmsartical/sdmstroublearticle'> <Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/sdms-article'> <Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 {/* <span><img src='image/SDMS.jpg' /></span>
                                 <h1><a href='#'>LogiLab SDMS</a></h1> */}
@@ -84,7 +84,7 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../dmsartical/dmstroublearticle'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/dms-article'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis DMS.Qualis DMS Web user manual is intended for administrators or anyone using Qualis SDMS
                                     Web application.</p>
@@ -95,7 +95,7 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../eln-lite-artical/eln-lite-trouble-article'><img src='../image/eln_lite_logo.svg' /></Link></div>
+                            <div className='pro-img'><Link href='/eln-lite-article'><img src='../image/eln_lite_logo.svg' /></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN Lite.Logilab ELN Lite Web user manual is intended for administrators or anyone using Logilab ELN Lite
                                     Web application.</p>

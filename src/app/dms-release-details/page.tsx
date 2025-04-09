@@ -10,8 +10,9 @@ interface ReleaseNote {
   _id: string;
   version: string;
   date: string;
-  details: string;
+  body: any[];
   slug: { current: string };
+  category: "version" | "technical";
 }
 
 export default function Releasedetails() {
@@ -19,10 +20,24 @@ export default function Releasedetails() {
   const [fadeOut, setFadeOut] = useState(false);
   const [releaseNotes, setReleaseNotes] = useState<ReleaseNote[]>([]);
 
+  const versionNotes = releaseNotes.filter(
+    (note) => note.category === "version"
+  );
+  const technicalNotes = releaseNotes.filter(
+    (note) => note.category === "technical"
+  );
+
   useEffect(() => {
     const fetchReleaseNotes = async () => {
       try {
-        const query = `*[_type == "release-notes"] | order(date desc) { _id, version, date, details, slug }`;
+        const query = `*[_type == "dms-release-notes"] | order(date desc) {
+          _id,
+          version,
+          date,
+          body,
+          slug,
+          category
+        }`;
         const result: ReleaseNote[] = await client.fetch(query);
         setReleaseNotes(result);
       } catch (error) {
@@ -38,7 +53,7 @@ export default function Releasedetails() {
     fetchReleaseNotes();
   }, []);
 
-  // Function to format date as "MMM dd, yyyy" (e.g., Sep 27, 2024)
+  // Format date as "MMM dd, yyyy" (e.g., Sep 27, 2024)
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat("en-US", {
@@ -68,7 +83,7 @@ export default function Releasedetails() {
               <Link href="/release-product">Product Release Notes</Link>
             </li>
             <li>
-              <Link href="/eln-release-details">ELN Release Notes</Link>
+              <Link href="/dms-release-details">DMS Release Notes</Link>
             </li>
           </ul>
         </nav>
@@ -79,11 +94,29 @@ export default function Releasedetails() {
           <h1 className="text-center">ELN Release Notes</h1>
           <div className="row">
             <div className="col-6 text-left">
-              <h2 >Version Release Notes</h2>
+              <h2>Version Release Notes</h2>
               <ul className="release-lists">
-                {releaseNotes.map((note) => (
+                {versionNotes.map((note) => (
                   <li key={note._id}>
-                    <Link href={`/eln-release-details/${note.slug.current}`}>
+                    <Link href={`/dms-release-details/${note.slug.current}`}>
+                      <span className="release-title">
+                        Release Notes: Version {note.version}
+                      </span>
+                    </Link>
+                    <span className="d-block release-date">
+                      {formatDate(note.date)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="col-6 text-left">
+              <h2>Technical Release Notes</h2>
+              <ul className="release-lists">
+                {technicalNotes.map((note) => (
+                  <li key={note._id}>
+                    <Link href={`/dms-release-details/${note.slug.current}`}>
                       <span className="release-title">
                         Release Notes: Version {note.version}
                       </span>
@@ -98,7 +131,8 @@ export default function Releasedetails() {
           </div>
         </div>
       </div>
-       <Help/>
+
+      <Help />
     </div>
   );
 }

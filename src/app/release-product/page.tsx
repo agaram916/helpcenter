@@ -45,27 +45,25 @@ const ReleaseProduct = () => {
                     <h1 className='text-center'>Product Release Notes</h1>
                     <ul>
                         <li>
-                            <div className='pro-img'><Link href="../limsreleasedetails"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/lims-release-details"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis LIMS. Qalis LIMS Web user manual is intended for administrators or anyone using  Qualis LIMS Web application.</p>
                                 <ul className='moduleCount'>
                                     <li> 16 Version Release Notes</li>
-                                    {/* <li className='mx-1'> Release Notes</li> */}
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href="../elnreleasedetails"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/eln-release-details"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN. Logilab ELN Web user manual is intended for administrators or anyone using Logilab ELN Web application.</p>
                                 <ul className='moduleCount'>
                                     <li> 18 Version Release Notes</li>
-                                    {/* <li className='mx-1'> 3 Release Notes</li> */}
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href="../sdmsreleasedetails"><Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/sdms-release-details"><Image alt='logo' src={SDMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 {/* <span><img src='image/SDMS.jpg' /></span>
                                 <h1><a href='#'>LogiLab SDMS</a></h1> */}
@@ -77,7 +75,7 @@ const ReleaseProduct = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href="../dmsreleasedetails"><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/dms-release-details"><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis DMS Qualis DMS Web user manual is intended for administrators or anyone using  Qualis SDMS Web application.</p>
                                 <ul className='moduleCount'>
