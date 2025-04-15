@@ -187,15 +187,24 @@ const Usersetup = () => {
     },
     marks: {
       color: ({ children, value }) => (
-        <span style={{ color: value?.hex || 'black'}}>
-          {children}
-        </span>
+        <span style={{ color: value?.hex || 'black' }}>{children}</span>
       ),
       largeText: ({ children }) => (
-        <span style={{ fontSize: '20px', fontWeight: 'bold'}}>
-          {children}
-        </span>
+        <span style={{ fontSize: '20px', fontWeight: 'bold' }}>{children}</span>
       ),
+      link: ({ value, children }) => {
+        const { href, newTab } = value;
+        return (
+          <a
+            href={href}
+            target={newTab ? '_blank' : '_self'}
+            rel={newTab ? 'noopener noreferrer' : undefined}
+            className="text-primary underline"
+          >
+            {children}
+          </a>
+        );
+      },
     },
   }}
 />

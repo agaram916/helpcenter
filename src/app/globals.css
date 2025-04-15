@@ -741,10 +741,29 @@ input[type="submit"] {
 }
 
 ul {
-  list-style: outside none none;
+  /* list-style: outside none none; */
   margin: 0;
   padding: 0;
 }
+.troble-article-list .artile-list{
+  list-style: none;
+}
+.media-body ul{
+  list-style: none;
+}
+.release-lists{
+  list-style: none;
+}
+.inner-video .artile-list{
+  list-style: none;
+}
+.promoted-articles ul{
+  list-style: none;
+}
+.footer-widget__list {
+  list-style:none !important;
+}
+
 
 .form-messege.success,
 .form-messege-2.success {
