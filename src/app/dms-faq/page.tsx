@@ -13,7 +13,7 @@ interface FAQItem {
   open: boolean;
 }
 
-const FAQELN = () => {
+const FAQDMS = () => {
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const [faqGroups, setFaqGroups] = useState<Record<string, FAQItem[]>>({});
@@ -22,7 +22,7 @@ const FAQELN = () => {
   useEffect(() => {
     const fetchFAQs = async () => {
       try {
-        const query = `*[_type == "eln-faq"]{ question, answer, sectionTitle }`;
+        const query = `*[_type == "dms-faq"]{ question, answer, sectionTitle }`;
         const result: FAQItem[] = await client.fetch(query);
 
         const grouped = result.reduce((acc, faq) => {
@@ -78,7 +78,7 @@ const FAQELN = () => {
 
       <div className='faq-list product-list'>
         <div className='container'>
-          <h1 className='text-center'>ELN FAQ</h1>
+          <h1 className='text-center'>DMS FAQ</h1>
           {Object.entries(faqGroups).map(([sectionTitle, faqs], groupIndex) => (
             <div className="faqs-section" key={groupIndex}>
               <h5 className="text-left faq-header">{sectionTitle}</h5>
@@ -103,4 +103,4 @@ const FAQELN = () => {
   );
 };
 
-export default FAQELN;
+export default FAQDMS;

@@ -92,9 +92,29 @@ export default async function ReleaseNotePage({ params }: { params: { slug: stri
               li: ({ children }) => <li className="text-left">{children}</li>,
             },
             marks: {
-              color: ({ children, value }) => <span style={{ color: value?.hex || "black" }}>{children}</span>,
-              largeText: ({ children }) => <span style={{ fontSize: "20px", fontWeight: "bold" }}>{children}</span>,
+              link: ({ value, children }) => {
+                const href = value?.href || "#";
+                const isExternal = href.startsWith("http");
+
+                return (
+                  <a
+                    href={href}
+                    target={isExternal ? "_blank" : "_self"}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="text-blue-600 underline"
+                  >
+                    {children}
+                  </a>
+                );
+              },
+              color: ({ children, value }) => (
+                <span style={{ color: value?.hex || "black" }}>{children}</span>
+              ),
+              largeText: ({ children }) => (
+                <span style={{ fontSize: "20px", fontWeight: "bold" }}>{children}</span>
+              ),
             },
+
           }}
         />
       </section>

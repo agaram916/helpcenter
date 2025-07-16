@@ -5,12 +5,12 @@ import { SyncLoader } from "react-spinners";
 import Help from "@/components/help";
 import client from "../../../lib/sanityClient";
 
-// Define the TypeScript interface for release notes
+// ✅ Corrected interface
 interface ReleaseNote {
   _id: string;
   version: string;
   date: string;
-  details: string;
+  body: any[];
   slug: { current: string };
 }
 
@@ -22,7 +22,8 @@ export default function Releasedetails() {
   useEffect(() => {
     const fetchReleaseNotes = async () => {
       try {
-        const query = `*[_type == "release-notes"] | order(date desc) { _id, version, date, details, slug }`;
+        // ✅ Corrected query
+        const query = `*[_type == "release-notes"] | order(date desc) { _id, version, date, body, slug }`;
         const result: ReleaseNote[] = await client.fetch(query);
         setReleaseNotes(result);
       } catch (error) {
@@ -38,7 +39,6 @@ export default function Releasedetails() {
     fetchReleaseNotes();
   }, []);
 
-  // Function to format date as "MMM dd, yyyy" (e.g., Sep 27, 2024)
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat("en-US", {
@@ -79,7 +79,7 @@ export default function Releasedetails() {
           <h1 className="text-center">ELN Release Notes</h1>
           <div className="row">
             <div className="col-6 text-left">
-              <h2 >Version Release Notes</h2>
+              <h2>Version Release Notes</h2>
               <ul className="release-lists">
                 {releaseNotes.map((note) => (
                   <li key={note._id}>
@@ -98,7 +98,8 @@ export default function Releasedetails() {
           </div>
         </div>
       </div>
-       <Help/>
+
+      <Help />
     </div>
   );
 }

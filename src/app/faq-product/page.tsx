@@ -44,7 +44,7 @@ const FAQ = () => {
                 <h1 className='text-center'> Product FAQ </h1>
                     <ul>
                         <li>
-                            <div className='pro-img'><Link href="../comingsoon"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/lims-faq"><Image alt='logo' src={LIMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>            
                                 <p>This guide provides instructions about configuring and using Qualis LIMS. Qualis  LIMS Web user manual is intended for administrators or anyone using Qualis LIMS
                                     Web application.</p>
@@ -66,7 +66,7 @@ const FAQ = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='../comingsoon'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/dms-faq'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis  DMS.Qualis DMS Web user manual is intended for administrators or anyone using Qualis DMS
                                     Web application.</p>
