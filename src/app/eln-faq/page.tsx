@@ -10,29 +10,72 @@ interface FAQItem {
   question: string;
   answer: string;
   sectionTitle?: string;
+  _createdAt: string;
   open: boolean;
+}
+
+interface FAQGroup {
+  title: string;
+  faqs: FAQItem[];
 }
 
 const FAQELN = () => {
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
-  const [faqGroups, setFaqGroups] = useState<Record<string, FAQItem[]>>({});
-  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [faqGroups, setFaqGroups] = useState<FAQGroup[]>([]);
 
   useEffect(() => {
     const fetchFAQs = async () => {
       try {
-        const query = `*[_type == "eln-faq"]{ question, answer, sectionTitle }`;
-        const result: FAQItem[] = await client.fetch(query);
+        const query = `*[_type == "eln-faq"] {
+          question,
+          answer,
+          sectionTitle,
+          _createdAt
+        }`;
 
-        const grouped = result.reduce((acc, faq) => {
-          const group = faq.sectionTitle || 'Others';
-          if (!acc[group]) acc[group] = [];
-          acc[group].push({ ...faq, open: false });
-          return acc;
-        }, {} as Record<string, FAQItem[]>);
+        const result: (FAQItem & { _createdAt: string })[] = await client.fetch(query);
 
-        setFaqGroups(grouped);
+        const sectionMap = new Map<
+          string,
+          { createdAt: string; faqs: FAQItem[] }
+        >();
+
+        result.forEach((faq) => {
+          const section = faq.sectionTitle || 'Others';
+
+          const faqWithOpen: FAQItem = { ...faq, open: false };
+
+          if (!sectionMap.has(section)) {
+            sectionMap.set(section, {
+              createdAt: faq._createdAt,
+              faqs: [faqWithOpen],
+            });
+          } else {
+            const sectionData = sectionMap.get(section)!;
+            sectionData.faqs.push(faqWithOpen);
+
+            if (faq._createdAt < sectionData.createdAt) {
+              sectionData.createdAt = faq._createdAt;
+            }
+          }
+        });
+
+        // Convert to array and sort by section createdAt
+        const groupedArray = Array.from(sectionMap.entries())
+          .sort((a, b) =>
+            new Date(a[1].createdAt).getTime() -
+            new Date(b[1].createdAt).getTime()
+          )
+          .map(([title, data]) => ({
+            title,
+            faqs: data.faqs.sort((a, b) =>
+              new Date(a._createdAt).getTime() -
+              new Date(b._createdAt).getTime()
+            ),
+          }));
+
+        setFaqGroups(groupedArray);
       } catch (error) {
         console.error('Error fetching FAQs:', error);
       }
@@ -49,12 +92,18 @@ const FAQELN = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleFAQ = (section: string, index: number) => {
-    const updated = faqGroups[section].map((faq, i) => ({
-      ...faq,
-      open: i === index ? !faq.open : false,
-    }));
-    setFaqGroups({ ...faqGroups, [section]: updated });
+  const toggleFAQ = (sectionIndex: number, faqIndex: number) => {
+    const updated = faqGroups.map((group, i) => {
+      if (i !== sectionIndex) return group;
+      return {
+        ...group,
+        faqs: group.faqs.map((faq, j) => ({
+          ...faq,
+          open: j === faqIndex ? !faq.open : false,
+        })),
+      };
+    });
+    setFaqGroups(updated);
   };
 
   if (loading) {
@@ -79,15 +128,15 @@ const FAQELN = () => {
       <div className='faq-list product-list'>
         <div className='container'>
           <h1 className='text-center'>ELN FAQ</h1>
-          {Object.entries(faqGroups).map(([sectionTitle, faqs], groupIndex) => (
+          {faqGroups.map((group, groupIndex) => (
             <div className="faqs-section" key={groupIndex}>
-              <h5 className="text-left faq-header">{sectionTitle}</h5>
+              <h5 className="text-left faq-header">{group.title}</h5>
               <div className="faqs">
-                {faqs.map((faq, index) => (
+                {group.faqs.map((faq, index) => (
                   <div
                     className={`faq ${faq.open ? 'open' : ''}`}
                     key={index}
-                    onClick={() => toggleFAQ(sectionTitle, index)}
+                    onClick={() => toggleFAQ(groupIndex, index)}
                   >
                     <div className="faq-question">{faq.question}</div>
                     <div className="faq-answer">{faq.answer}</div>
@@ -98,7 +147,7 @@ const FAQELN = () => {
           ))}
         </div>
       </div>
-      <Help/>
+      <Help />
     </div>
   );
 };

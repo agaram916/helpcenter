@@ -71,7 +71,6 @@ const FAQ = () => {
                                 <p>This guide provides instructions about configuring and using Qualis  DMS.Qualis DMS Web user manual is intended for administrators or anyone using Qualis DMS
                                     Web application.</p>
                             </div>
-
                         </li>
                         <li>
                             <div className='pro-img'><Link href='/cfr-faq'><Image alt='logo' src={CFR} className='img-fluid'/></Link></div>
@@ -79,7 +78,6 @@ const FAQ = () => {
                                 <p>This guide provides instructions about configuring and using CFR Gateway.CFR Gateway Web user manual is intended for administrators or anyone using CFR Gateway
                                     Web application.</p>
                             </div>
-
                         </li>
                     </ul>
                 </div>
