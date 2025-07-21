@@ -19800,6 +19800,29 @@ input[type="text"]:focus {
 	color:#697695;
   display: inline-block;
 }
+
+/* FAQ rich text block styling */
+.faq-answer {
+  padding-left: 1rem;
+  line-height: 1.6;
+}
+
+.faq-answer ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-answer ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-answer li {
+  margin-bottom: 0.5rem;
+}
+
 @media only screen and (max-width: 767px) {
   .copyright-text {
     margin-bottom: 15px;
