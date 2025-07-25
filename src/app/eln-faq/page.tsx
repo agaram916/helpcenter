@@ -174,7 +174,7 @@ const FAQELN: React.FC = () => {
       {/* ── FAQ list ─────────────────────────────────────────────── */}
       <div className="faq-list">
         <div className="container">
-          <h1 className="text-center">ELN&nbsp;FAQ</h1>
+          <h1 className="text-center pt-2">ELN&nbsp;FAQ</h1>
 
           {faqGroups.map((group, gIdx) => (
             <section className="faqs-section" key={group.title}>
