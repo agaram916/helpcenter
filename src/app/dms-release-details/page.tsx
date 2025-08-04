@@ -73,6 +73,9 @@ export default function Releasedetails() {
 
   return (
     <div className="product">
+
+
+      
       <div className="inner-page">
         <nav className="navbar">
           <ul className="list-unstyled row mb-0">
@@ -82,16 +85,13 @@ export default function Releasedetails() {
             <li>
               <Link href="/release-product">Product Release Notes</Link>
             </li>
-            <li>
-              <Link href="/dms-release-details">DMS Release Notes</Link>
-            </li>
           </ul>
         </nav>
       </div>
 
       <div className="troble-article-list">
         <div className="container">
-          <h1 className="text-center">ELN Release Notes</h1>
+          <h1 className="text-center">DMS Release Notes</h1>
           <div className="row">
             <div className="col-6 text-left">
               <h2>Version Release Notes</h2>
@@ -111,7 +111,7 @@ export default function Releasedetails() {
               </ul>
             </div>
 
-            <div className="col-6 text-left">
+            {/* <div className="col-6 text-left">
               <h2>Technical Release Notes</h2>
               <ul className="release-lists">
                 {technicalNotes.map((note) => (
@@ -127,7 +127,7 @@ export default function Releasedetails() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

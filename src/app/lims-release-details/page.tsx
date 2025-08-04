@@ -67,16 +67,13 @@ export default function Releasedetails() {
             <li>
               <Link href="/release-product">Product Release Notes</Link>
             </li>
-            <li>
-              <Link href="/lims-release-details">LIMS Release Notes</Link>
-            </li>
           </ul>
         </nav>
       </div>
 
       <div className="troble-article-list">
         <div className="container">
-          <h1 className="text-center">ELN Release Notes</h1>
+          <h1 className="text-center">LIMS Release Notes</h1>
           <div className="row">
             <div className="col-6 text-left">
               <h2 >Version Release Notes</h2>

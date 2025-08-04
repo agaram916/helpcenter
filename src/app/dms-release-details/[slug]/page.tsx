@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import client from "../../../../lib/sanityClient";
 import imageUrlBuilder from '@sanity/image-url';
 import Help from "@/components/help";
-
+import Link from "next/link";
 // Define TypeScript interface for release notes
 interface ReleaseNote {
   version: string;
@@ -18,7 +18,7 @@ const builder = imageUrlBuilder(client);
 // }
 // Fetch release note data based on slug
 const getReleaseNote = async (slug: string): Promise<ReleaseNote | null> => {  
-  const query = `*[_type == "sdms-release-notes" && slug.current == $slug][0]{
+  const query = `*[_type == "dms-release-notes" && slug.current == $slug][0]{
     version, date, body
   }`;
 
@@ -40,6 +40,23 @@ export default async function ReleaseNotePage({ params }: { params: { slug: stri
       <p><strong>Release Date:</strong> {new Date(releaseNote.date).toLocaleDateString("en-US", { 
         month: "short", day: "2-digit", year: "numeric" 
       })}</p> */}
+
+         <div className="inner-page">
+        <nav className="navbar">
+          <ul className="list-unstyled row mb-0">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/release-product">Product Release Notes</Link>
+            </li>
+            <li>
+              <Link href="/dms-release-details">DMS Release Notes</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
 
 <div className="inner-details">
 <section className="article-content">

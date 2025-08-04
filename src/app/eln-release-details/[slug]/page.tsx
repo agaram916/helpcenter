@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import client from "../../../../lib/sanityClient";
 import imageUrlBuilder from '@sanity/image-url';
 import Help from "@/components/help";
-
+import Link from "next/link";
 // Define TypeScript interface for release notes
 interface ReleaseNote {
   version: string;
@@ -40,6 +40,23 @@ export default async function ReleaseNotePage({ params }: { params: { slug: stri
       <p><strong>Release Date:</strong> {new Date(releaseNote.date).toLocaleDateString("en-US", { 
         month: "short", day: "2-digit", year: "numeric" 
       })}</p> */}
+
+      
+      <div className="inner-page">
+        <nav className="navbar">
+          <ul className="list-unstyled row mb-0">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/release-product">Product Release Notes</Link>
+            </li>
+            <li>
+              <Link href="/eln-release-details">ELN Release Notes</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
 <div className="inner-details">
 <section className="article-content">

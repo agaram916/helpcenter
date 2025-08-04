@@ -82,9 +82,6 @@ export default function Releasedetails() {
             <li>
               <Link href="/release-product">Product Release Notes</Link>
             </li>
-            <li>
-              <Link href="/sdms-release-details">SDMS Release Notes</Link>
-            </li>
           </ul>
         </nav>
       </div>
@@ -110,7 +107,7 @@ export default function Releasedetails() {
                 ))}
               </ul>
             </div>
-
+{/* 
             <div className="col-6 text-left">
               <h2>Technical Release Notes</h2>
               <ul className="release-lists">
@@ -127,7 +124,7 @@ export default function Releasedetails() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

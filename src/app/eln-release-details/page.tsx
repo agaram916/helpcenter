@@ -58,6 +58,8 @@ export default function Releasedetails() {
 
   return (
     <div className="product">
+   
+
       <div className="inner-page">
         <nav className="navbar">
           <ul className="list-unstyled row mb-0">
@@ -67,9 +69,9 @@ export default function Releasedetails() {
             <li>
               <Link href="/release-product">Product Release Notes</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/eln-release-details">ELN Release Notes</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
