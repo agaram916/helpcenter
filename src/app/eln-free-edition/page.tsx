@@ -84,7 +84,7 @@ Object.keys(groupedArticles).forEach((section) => {
 
       <div className='troble-article-list'>
         <div className='container'>
-             <h1 className='text-center'>Qualis DMS Tutorial Article</h1>
+             <h1 className='text-center'>Logilab ELN Free Tutorial Articles </h1>
              <div className="row">
   {/* Left Column */}
   <div className="col-md-6">

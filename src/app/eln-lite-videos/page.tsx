@@ -32,7 +32,7 @@ export default function Elnlitevideos() {
             <ul className="list-unstyled row mb-0">
               <li><Link href="/">Home </Link></li>
               <li><Link href="../productvideo">Videos </Link></li>
-              <li> <Link href="#">Logilab ELN Lite Product Demonstration</Link></li>
+              <li> <Link href="#">Logilab ELN Free Product Demonstration</Link></li>
 
             </ul>
           </nav>
@@ -43,7 +43,7 @@ export default function Elnlitevideos() {
           <div className="row">
             <div className="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div className="video-txt text-left">
-                    <h3  className="dark-heading mt-30 mb-20">Introducing logilab ELN Lite a saas-based eln software</h3> 	
+                    <h3  className="dark-heading mt-30 mb-20">Introducing Free edition of Logilab ELN a saas-based eln software</h3> 	
                     <p>Logilab ELN Lite Software is a time-tested Electronic Lab Notebook (ELN) application designed for test and research environments, to transform laboratories to perform their tasks in a digital and paperless manner. </p>
                     <div className="hero-button mt-30">
                         <a href="https://logilabeln.com/" className="ht-btn ht-btn-md">Learn More</a>
@@ -74,7 +74,7 @@ export default function Elnlitevideos() {
           </div>
           </div>
           <div className="inner-video ">
-          <h1 className="text-center mb-4">Logilab ELN Lite  Tutorial videos</h1>
+          <h1 className="text-center mb-4">Logilab ELN Free Tutorial videos</h1>
           <div className="row mt-5 ">
                 <div className="col-12 col-md-6 col-lg-6 col-xl-6">
                     <h2 className="text-left"> ELN Lite SetUp</h2>

@@ -84,18 +84,18 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='/dms-article'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href='/comingsoon'><Image alt='logo' src={DMSlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis DMS.Qualis DMS Web user manual is intended for administrators or anyone using Qualis SDMS
                                     Web application.</p>
-                                <ul className='moduleCount'>
+                                {/* <ul className='moduleCount'>
                                     <li>14 Articles</li>
                                     <li className='mx-1'>3 Sections</li>
-                                </ul>
+                                </ul> */}
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href='/eln-lite-article'><img src='../image/eln_lite_logo.svg' /></Link></div>
+                            <div className='pro-img'><Link href='/eln-free-edition'><img src='../image/eln-free.svg' /></Link></div> 
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN Lite.Logilab ELN Lite Web user manual is intended for administrators or anyone using Logilab ELN Lite
                                     Web application.</p>
