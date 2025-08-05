@@ -7,7 +7,7 @@ import ELNlogo from 'public/image/ELN-logo.png';
 import SDMSlogo from 'public/image/SDMS-logo.png';
 import DMSlogo from 'public/image/DMS-logo.png';
 import CFR from 'public/image/CFR.jpg'; 
-import Elnlite from 'public/image/eln_lite_logo.svg'; 
+import Elnlite from 'public/image/eln-free.svg'; 
 import { SyncLoader } from 'react-spinners';
 import React, { useState ,useEffect } from "react";
 export default function productvideo() {
@@ -96,8 +96,7 @@ export default function productvideo() {
                         <li>
                             <div className='pro-img'><Link href='../cfrvideos'><Image alt='logo' src={CFR} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
-                                <p>This guide provides instructions about configuring and using CFR Gateway.CFR Gateway Web user manual is intended for administrahrefrs or anyone using CFR Gateway
-                                    Web application.</p>
+                                <p>This guide provides instructions about configuring and using CFR Gateway.CFR Gateway Web user manual is intended for administrahrefrs or anyone using CFR Gateway Web application.</p>
                                     <ul className='moduleCount'>
                                         <li>3 Videos</li>
                                         <li className='mx-1'>1 Sections</li>
@@ -108,7 +107,7 @@ export default function productvideo() {
                         <li>
                             <div className='pro-img'><Link href='../eln-lite-videos'><Image alt='logo' src={Elnlite} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
-                                <p>This guide provides instructions about configuring and using Logilab ELN Lite.Logilab ELN Lite Web user manual is intended for administrators or anyone using Logilab ELN Lite Web application.</p>
+                                <p>This guide provides instructions about configuring and using Logilab ELN free edition. This Web user manual is intended for administrators or anyone using Logilab ELN free edition Web application.</p>
                                     <ul className='moduleCount'>
                                         <li>5 Videos</li>
                                         <li className='mx-1'>4 Sections</li>

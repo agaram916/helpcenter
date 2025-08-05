@@ -97,8 +97,7 @@ const ProductDocument = () => {
                         <li>
                             <div className='pro-img'><Link href='/eln-free-edition'><img src='../image/eln-free.svg' /></Link></div> 
                             <div className='prot-dis'>
-                                <p>This guide provides instructions about configuring and using Logilab ELN Lite.Logilab ELN Lite Web user manual is intended for administrators or anyone using Logilab ELN Lite
-                                    Web application.</p>
+                                <p>This guide provides instructions about configuring and using Logilab ELN free edition. This Web user manual is intended for administrators or anyone using Logilab ELN free edition Web application.</p>
                                 <ul className='moduleCount'>
                                     <li> 5 Articles</li>
                                     <li className='mx-1'>5 Sections</li>

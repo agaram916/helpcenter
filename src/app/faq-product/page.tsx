@@ -79,6 +79,14 @@ const FAQ = () => {
                                     Web application.</p>
                             </div>
                         </li>
+                            <li>
+                               <div className='pro-img'><Link href='/eln-free-edition-faq'><img src='../image/eln-free.svg'/></Link></div> 
+                            <div className='prot-dis'>
+                                <p>This guide provides instructions about configuring and using Logilab ELN free edition. This Web user manual is intended for administrators or anyone using Logilab ELN free edition Web application.</p>
+                                <ul className='moduleCount'>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
