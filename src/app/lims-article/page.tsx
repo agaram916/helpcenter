@@ -40,7 +40,7 @@ const LimstroubleArticle = () => {
   string,
   { column: 'left' | 'right'; articles: Record<string, Article[]> }
 > = articles.reduce((acc, article) => {
-  const section = article.section || 'Other'; // Default section if missing
+  const section = article.section || 'Other Articles'; // Default section if missing
   const subtitle = article.subtitle || '_noSubtitle'; // Handle missing subtitle
 
   if (!acc[section]) {

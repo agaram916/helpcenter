@@ -98,7 +98,7 @@ Object.keys(groupedArticles).forEach((section) => {
               <ul className="artile-list text-left">
                 {groupedArticles[section].articles[subtitle].map((article, i) => (
                   <li key={i}>
-                    <Link href={`/eln-lite-article/${article.slug}`}>{article.title}</Link>
+                    <Link href={`/eln-free-edition/${article.slug}`}>{article.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -121,7 +121,7 @@ Object.keys(groupedArticles).forEach((section) => {
                       <ul className="artile-list text-left">
                         {groupedArticles[section].articles[subtitle].map((article, i) => (
                           <li key={i}>
-                            <Link href={`/eln-lite-article/${article.slug}`}>{article.title}</Link>
+                            <Link href={`/eln-free-edition/${article.slug}`}>{article.title}</Link>
                           </li>
                         ))}
                       </ul>

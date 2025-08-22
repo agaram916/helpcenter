@@ -106,7 +106,7 @@ const ElnLiteUsersetup = () => {
          <ul className="list-unstyled row mb-0">
             <li><Link href="/">Home</Link></li>
             <li><Link href="../../product-document">Article Products</Link></li>
-            <li><Link href="/eln-lite-article">ELN LITE Article</Link></li>
+            <li><Link href="/eln-free-edition">ELN Free Edition Article</Link></li>
           </ul>
         </nav>
       </div>
@@ -207,7 +207,7 @@ const ElnLiteUsersetup = () => {
                 {article.prevArticle ? (
                   <>
                     <h4>Previous article</h4>
-                    <Link href={`/eln-lite-article/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
+                    <Link href={`/eln-free-edition/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
                   </>
                 ) : null}
               </div>
@@ -215,7 +215,7 @@ const ElnLiteUsersetup = () => {
                 {article.nextArticle ? (
                   <>
                     <h4>Next article</h4>
-                    <Link href={`/eln-lite-article/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
+                    <Link href={`/eln-free-edition/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
                   </>
                 ) : null}
               </div>

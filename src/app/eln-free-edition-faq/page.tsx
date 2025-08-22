@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SyncLoader } from 'react-spinners';
@@ -53,15 +54,15 @@ const ptComponents: PortableTextComponents = {
    ———————————————————— */
 
 const FAQELN: React.FC = () => {
-const [loading, setLoading] = useState(true);
-const [fadeOut, setFadeOut] = useState(false);
-const [faqGroups, setFaqGroups] = useState<FAQGroup[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [faqGroups, setFaqGroups] = useState<FAQGroup[]>([]);
 
   /* Fetch & group FAQs ---------------------------------------------------- */
   useEffect(() => {
     const fetchFAQs = async () => {
       try {
-        const query = `*[_type =="eln-free-faq"]{
+        const query = `*[_type == "eln-free-faq"]{
           _id,
           question,
           answer,
@@ -173,11 +174,11 @@ const [faqGroups, setFaqGroups] = useState<FAQGroup[]>([]);
       {/* ── FAQ list ─────────────────────────────────────────────── */}
       <div className="faq-list">
         <div className="container">
-          <h1 className="text-center pt-2">ELN FREE FAQ</h1>
-
+          <h1 className="text-center pt-2">ELN FREE &nbsp;FAQ</h1>
           {faqGroups.map((group, gIdx) => (
             <section className="faqs-section" key={group.title}>
               <h5 className="faq-header">{group.title}</h5>
+
               <div className="faqs">
                 {group.faqs.map((faq, fIdx) => (
                   <article
