@@ -10,7 +10,7 @@ export default function NotFound() {
     <section className="error_page ">
        
         <div className=" flex">
-            <div className="error_contain text-center pt-5">
+            <div className="error_contain text-center pt-5 pb-5">
                 <div className="b_text">
                     <h1 className="f_p  f_700">404</h1>
                 </div>

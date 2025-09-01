@@ -19865,6 +19865,26 @@ ul.footer-widget__horizontal-list li {
   width: 160px;
   height: 48px;
 }
+
+.error_page h1{
+  font-size: 60px;
+  color: #273B5E;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.41;
+}
+.error_page h2{
+  font-size: 30px;
+  color: #273B5E;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.41;
+}
+
 .error_page{
   background-color:#FAFAFA ;
 }
