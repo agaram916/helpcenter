@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { notFound } from "next/navigation";
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import Footer from '@/components/footer';
@@ -96,7 +97,7 @@ const Usersetup = () => {
   }
 
   if (!article) {
-    return <p>Article not found</p>;
+      notFound();
   }
 
   return (

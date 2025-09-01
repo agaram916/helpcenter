@@ -52,8 +52,8 @@ const ProductDocument = () => {
                                 <p>This guide provides instructions about configuring and using Qualis LIMS. Qualis LIMS Web user manual is intended for administrators or anyone using Qualis LIMS
                                     Web application.</p>
                                 <ul className='moduleCount'>
-                                     <li>22 Articles</li>
-                                     <li className='mx-1'>4 Sections</li>
+                                     <li>61 Articles</li>
+                                     <li className='mx-1'>10 Sections</li>
                                 </ul>
                             </div>
                         </li>
@@ -65,8 +65,8 @@ const ProductDocument = () => {
                                 <p>This guide provides instructions about configuring and using Logilab ELN. Logilab ELN Web user manual is intended for administrators or anyone using Logilab 
                                 ELN Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li>28 Articles</li>
-                                    <li className='mx-1'>8 Sections</li>
+                                    <li>51 Articles</li>
+                                    <li className='mx-1'>11 Sections</li>
                                 </ul>
                             </div>
                         </li>
@@ -78,8 +78,8 @@ const ProductDocument = () => {
                                 <p>This guide provides instructions about configuring and using Logilab SDMS. Logilab SDMS Web user manual is intended for administrators or anyone using Logilab SDMS
                                     Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li>25 Articles</li>
-                                    <li className='mx-1'>7 Sections</li>
+                                    <li>56 Articles</li>
+                                    <li className='mx-1'>10 Sections</li>
                                 </ul>
                             </div>
                         </li>
@@ -99,7 +99,7 @@ const ProductDocument = () => {
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN free edition. This Web user manual is intended for administrators or anyone using Logilab ELN free edition Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li> 5 Articles</li>
+                                    <li> 23 Articles</li>
                                     <li className='mx-1'>5 Sections</li>
                                 </ul>
                             </div>

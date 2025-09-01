@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { notFound } from "next/navigation";
 import Footer from '@/components/footer';
 import Help from '@/components/help';
 import { SyncLoader } from 'react-spinners';
@@ -96,8 +97,9 @@ const DmsUsersetup = () => {
   }
 
   if (!article) {
-    return <p>Article not found</p>;
-  }
+        notFound();
+    }  
+  
 
   return (
     <div className="product">

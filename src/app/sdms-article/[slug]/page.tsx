@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { notFound } from "next/navigation";
 import { useParams } from 'next/navigation';
 import Footer from '@/components/footer';
 import Help from '@/components/help';
@@ -96,8 +97,8 @@ const Usersetup = () => {
   }
 
   if (!article) {
-    return <p>Article not found</p>;
-  }
+       notFound();
+   }
 
   return (
     <div className="product">

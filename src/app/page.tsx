@@ -12,28 +12,68 @@ import helpfaq from 'public/image/help-centre-faq.svg';
 import SearchFilter from '../components/SearchFilter';
 import Link from 'next/link';
 import Help from '@/components/help';
-// import AutoSearchInput from '@/components/AutoSearchInput';
+import client from '../../lib/sanityClient';
+
+interface Article {
+  title: string;
+  slug: {
+    current: string;
+  };
+}
+
+interface PopularArticles {
+  lims: Article[];
+  eln: Article[];
+  sdms: Article[];
+}
+
 export default function Home() {
-// const suggestions = ['Apple', 'Banana', 'Orange', 'Pineapple', 'Mango'];
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
+  // ✅ Correct type for state
+  const [popularArticles, setPopularArticles] = useState<PopularArticles>({
+    lims: [],
+    eln: [],
+    sdms: [],
+  });
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFadeOut(true); 
-      setTimeout(() => setLoading(false), 500); 
-    }, 300); 
+      setFadeOut(true);
+      setTimeout(() => setLoading(false), 500);
+    }, 300);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    async function fetchPopular() {
+      const query = `{
+        "lims": *[_type == "limsarticle" && isPopular == true] 
+          | order(_createdAt asc)[0...3] {title, slug},
+        "eln": *[_type == "article" && isPopular == true] 
+          | order(_createdAt asc)[0...3] {title, slug},
+        "sdms": *[_type == "sdmsarticle" && isPopular == true] 
+          | order(_createdAt asc)[0...3] {title, slug}
+      }`;
+
+      const result: PopularArticles = await client.fetch(query);
+      setPopularArticles(result);
+    }
+
+    fetchPopular();
   }, []);
 
   if (loading) {
     return (
-      <div className={`preloader ${fadeOut ? 'fade-out' : ''}`}>
+      <div className={`preloader ${fadeOut ? "fade-out" : ""}`}>
         <SyncLoader color="#1163ea" size={20} />
       </div>
     );
   }
-  
+
+ 
+
   return (<div>
 
     <div className='App'>
@@ -122,7 +162,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='promoted-articles'>
+      {/* <div className='promoted-articles'>
         <div className='container'>
           <h1>Popular Articles</h1>
           <ul className='list-unstyled row row-sm justify-content-center'>
@@ -148,7 +188,67 @@ export default function Home() {
             </div>
           </ul>
         </div>
+      </div> */}
+  <div className="promoted-articles">
+        <div className="container">
+          <h1>Popular Articles</h1>
+          <ul className="list-unstyled row row-sm justify-content-center">
+            {/* LIMS Articles */}
+            <div className="col-md-4">
+              <ul>
+                {popularArticles.lims.length > 0 ? (
+                  popularArticles.lims.map((article) => (
+                    <li key={article.slug.current} className="text-left footer3">
+                      <Link href={`/lims-article/${article.slug.current}`}>
+                        {article.title}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <p>No LIMS articles yet.</p>
+                )}
+              </ul>
+            </div>
+
+            {/* ELN Articles */}
+            <div className="col-md-4">
+              <ul>
+                {popularArticles.eln.length > 0 ? (
+                  popularArticles.eln.map((article) => (
+                    <li key={article.slug.current} className="text-left footer3">
+                      <Link href={`/eln-article/${article.slug.current}`}>
+                        {article.title}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <p>No ELN articles yet.</p>
+                )}
+              </ul>
+            </div>
+
+            {/* SDMS Articles */}
+            <div className="col-md-4">
+              <ul>
+                {popularArticles.sdms.length > 0 ? (
+                  popularArticles.sdms.map((article) => (
+                    <li key={article.slug.current} className="text-left footer3">
+                      <Link href={`/sdms-article/${article.slug.current}`}>
+                        {article.title}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <p>No SDMS articles yet.</p>
+                )}
+              </ul>
+            </div>
+          </ul>
+        </div>
       </div>
+
+   
+
           <Help/>
     </div>
   </div>
