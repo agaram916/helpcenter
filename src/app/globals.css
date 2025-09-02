@@ -345,7 +345,6 @@ h5.white-heading {
 }
 
 .fulfil-wrapper {
-
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -371,7 +370,6 @@ h5.white-heading {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .bg-blue {
@@ -442,7 +440,6 @@ ul.footer-widget__list {
   font-weight: 700;
   color: #697695;
   font-size: 14px;
-
 }
 
 .footer-top2 {
@@ -5480,6 +5477,9 @@ only screen and (max-width: 767px) {
   left: 0;
   width: 100%;
   z-index: 1;
+}
+.mb-20 {
+    margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -18040,8 +18040,6 @@ body {
   color: #000;
 }
 
-
-
 .Header__logotxt {
   color: #fff;
   font-size: 1.25rem;
@@ -19888,6 +19886,7 @@ ul.footer-widget__horizontal-list li {
 .error_page{
   background-color:#FAFAFA ;
 }
+
 .error_page .about_btn{
   /* font: 500 14px "nunito sans", sans-serif; */
   padding: 17px 28px;

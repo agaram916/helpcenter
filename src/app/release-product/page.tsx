@@ -49,7 +49,7 @@ const ReleaseProduct = () => {
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis LIMS. Qalis LIMS Web user manual is intended for administrators or anyone using  Qualis LIMS Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li> 16 Version Release Notes</li>
+                                    <li> 11 Version Release Notes</li>
                                 </ul>
                             </div>
                         </li>
@@ -58,7 +58,7 @@ const ReleaseProduct = () => {
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Logilab ELN. Logilab ELN Web user manual is intended for administrators or anyone using Logilab ELN Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li> 18 Version Release Notes</li>
+                                    <li> 15 Version Release Notes</li>
                                 </ul>
                             </div>
                         </li>
@@ -69,8 +69,7 @@ const ReleaseProduct = () => {
                                 <h1><a href='#'>LogiLab SDMS</a></h1> */}
                                 <p>This guide provides instructions about configuring and using Logilab SDMS. Logilab SDMS Web user manual is intended for administrators or anyone using Logilab SDMS Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li> 14 Version Release Notes</li>
-                                    <li className='mx-1'> 4 Release Notes</li>
+                                    <li> 13 Version Release Notes</li>
                                 </ul>
                             </div>
                         </li>
@@ -79,8 +78,7 @@ const ReleaseProduct = () => {
                             <div className='prot-dis'>
                                 <p>This guide provides instructions about configuring and using Qualis DMS Qualis DMS Web user manual is intended for administrators or anyone using  Qualis SDMS Web application.</p>
                                 <ul className='moduleCount'>
-                                    <li> 6 Version Release Notes</li>
-                                    <li className='mx-1'> 3 Release Notes</li>
+                                    <li> 4 Version Release Notes</li>
                                 </ul>
                             </div>
 

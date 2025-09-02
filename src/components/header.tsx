@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from 'public/assets/images/home/logo-white.png';
+
 function Header() {
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
@@ -23,7 +24,6 @@ function Header() {
                                         <Image alt=''src={Logo} className="head-home-logo img-fluid" />
                                     </Link>
                                 </div>
-
                                 <div className="header-right">
                                     <div className="header__actions--preview">
                                         <div className="header__actions">

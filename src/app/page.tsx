@@ -162,33 +162,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className='promoted-articles'>
-        <div className='container'>
-          <h1>Popular Articles</h1>
-          <ul className='list-unstyled row row-sm justify-content-center'>
-            <div className='col-md-4'>
-              <ul>
-                <li className='text-left'><Link href='./limsartical/testmanagement'>Test management configuration</Link></li>
-                <li className='text-left footer3'><Link href='./limsartical/samplemaster'>Sample master configuration</Link></li>
-                <li className='text-left  footer3'><Link href='./limsartical/registeringsample'>Registering a Sample</Link></li>
-              </ul>
-            </div>
-            <div className='col-md-4'>
-              <ul>
-                <li className='text-left'><Link href='./elnartical/sheettemplate'> How to create sheet template</Link></li>
-                <li className='text-left footer3'><Link href='./elnartical/articeldetailsfour'>How to assign user rights</Link></li>
-                <li className='text-left footer3'><Link href='./elnartical/registersheetorders'>Register sheet orders</Link></li>
-              </ul>
-            </div><div className='col-md-4'>
-              <ul>
-                <li className='text-left'><Link href='./sdmsartical/schedule'>How to create a schedule for file upload</Link></li>
-                <li className='text-left  footer3'><Link  href='./sdmsartical/workflow'>How to setup work flow in sdms</Link></li>
-                <li className='text-left  footer3'><Link  href='./sdmsartical/extractfile'>How to extract file metadata</Link></li>
-              </ul>
-            </div>
-          </ul>
-        </div>
-      </div> */}
   <div className="promoted-articles">
         <div className="container">
           <h1>Popular Articles</h1>
@@ -216,7 +189,7 @@ export default function Home() {
                 {popularArticles.eln.length > 0 ? (
                   popularArticles.eln.map((article) => (
                     <li key={article.slug.current} className="text-left footer3">
-                      <Link href={`/eln-article/${article.slug.current}`}>
+                      <Link href={`/eln-articel/${article.slug.current}`}>
                         {article.title}
                       </Link>
                     </li>
