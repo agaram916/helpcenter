@@ -108,7 +108,7 @@ const Usersetup = () => {
          <ul className="list-unstyled row mb-0">
             <li><Link href="/">Home</Link></li>
             <li><Link href="../../product-document">Article Products</Link></li>
-            <li><Link href="/eln-articel">ELN Article</Link></li>
+            <li><Link href="/eln-article">ELN Article</Link></li>
           </ul>
         </nav>
       </div>
@@ -218,7 +218,7 @@ const Usersetup = () => {
                 {article.prevArticle ? (
                   <>
                     <h4>Previous article</h4>
-                    <Link href={`/eln-articel/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
+                    <Link href={`/eln-article/${article.prevArticle.slug.current}`}>{article.prevArticle.title}</Link>
                   </>
                 ) : null}
               </div>
@@ -226,7 +226,7 @@ const Usersetup = () => {
                 {article.nextArticle ? (
                   <>
                     <h4>Next article</h4>
-                    <Link href={`/eln-articel/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
+                    <Link href={`/eln-article/${article.nextArticle.slug.current}`}>{article.nextArticle.title}</Link>
                   </>
                 ) : null}
               </div>

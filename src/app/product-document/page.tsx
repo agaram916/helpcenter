@@ -58,7 +58,7 @@ const ProductDocument = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='pro-img'><Link href="/eln-articel"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
+                            <div className='pro-img'><Link href="/eln-article"><Image alt='logo' src={ELNlogo} className='img-fluid'/></Link></div>
                             <div className='prot-dis'>
                                 {/* <span><img src='image/ELN.jpg' /></span>
                                 <h1><a href='#'>LogiLab ELN</a></h1> */}

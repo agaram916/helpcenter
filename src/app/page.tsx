@@ -189,7 +189,7 @@ export default function Home() {
                 {popularArticles.eln.length > 0 ? (
                   popularArticles.eln.map((article) => (
                     <li key={article.slug.current} className="text-left footer3">
-                      <Link href={`/eln-articel/${article.slug.current}`}>
+                      <Link href={`/eln-article/${article.slug.current}`}>
                         {article.title}
                       </Link>
                     </li>
@@ -219,9 +219,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-
-   
-
           <Help/>
     </div>
   </div>
